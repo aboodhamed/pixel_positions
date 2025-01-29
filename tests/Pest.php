@@ -12,9 +12,9 @@
 */
 
 pest()->extend(Tests\TestCase::class)
- // ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
-    ->in('Feature');
-
+ ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
+    ->in('Feature','Unit');
+    
 /*
 |--------------------------------------------------------------------------
 | Expectations

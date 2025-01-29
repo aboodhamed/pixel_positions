@@ -4,24 +4,28 @@ namespace App\Providers;
 
 use App\Models\Job;
 use App\Policies\JobPolicy;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class AuthServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Register services.
      */
     public function register(): void
     {
-        
+        //
     }
 
+    protected $policies = [
+        Job::class => JobPolicy::class,
+   ];
+
+
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      */
     public function boot(): void
     {
-        Model::unguard();
+        //
     }
 }

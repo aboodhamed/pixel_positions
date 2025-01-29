@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        // Add other fillable attributes if necessary
     ];
 
     /**
@@ -45,4 +46,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // Define the relationship with the employer
+    public function employer()
+    {
+        return $this->hasOne(Employer::class)->withDefault();
+    }
+
 }
