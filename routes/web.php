@@ -19,6 +19,22 @@ Route::middleware('guest')->group(function () {
        
 });
 
+
+Route::delete('/logout', [SessionController::class, 'destroy'])->middleware('auth');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/jobs',[JobController::class, 'create']);
     Route::post('/jobs',[JobController::class, 'store']);
@@ -32,4 +48,3 @@ Route::middleware('auth')->group(function () {
 Route::get('/search',searchController::class);
 Route::get('/tags/{tag:name}',TagController::class);
 
-Route::delete('/logout', [SessionController::class, 'destroy'])->middleware('auth');

@@ -35,7 +35,6 @@
                 <h1 class="bg-blue-700 hover:bg-blue-900 rounded-2xl text-2xs font-bold transition-colors duration-300 px-4 py-1">edit</h1>
             </a>
           
-     
             <form action="{{ route('jobs.destroy', $job->id) }}" method="POST" class="pl-1 text-center" >
                 @csrf
                 @method('DELETE')

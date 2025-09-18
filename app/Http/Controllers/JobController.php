@@ -16,10 +16,12 @@
 
 class JobController extends Controller
 {
+
+    // Display a listing of the resource.
     public function index()
     {
         $jobs = Job::latest()->with(['employer', 'tags'])->get()->groupBy('featured');
-        
+
         // Check if the group keys 0 and 1 exist
         $featuredJobs = $jobs->has(1) ? $jobs[1] : collect(); // Default to an empty collection if 1 doesn't exist
         $normalJobs = $jobs->has(0) ? $jobs[0] : collect();  // Default to an empty collection if 0 doesn't exist
@@ -31,10 +33,13 @@ class JobController extends Controller
         ]);
     }
     
+    // Show the form for creating a new resource.
     public function create()
     {
         return view('jobs.create');
     }
+
+    // Store a newly created resource in storage.
     public function store(Request $request)
     {
         $attributes = $request->validate([
@@ -64,10 +69,12 @@ class JobController extends Controller
         return redirect('/');
     }
 
+    // Display the specified resource.
     public function show(Job $job)
     {     
         if(Auth::guest())
         {   return redirect('/login');  }
+        
 
         $job->load('tags');
         return view('jobs.show', [
@@ -93,6 +100,7 @@ class JobController extends Controller
           'url' => 'required|url',
           'tags' => 'nullable',
          ]);
+
          $attributes['featured'] = $request->has('featured'); 
         
           // Remove tags from attributes before updating the job

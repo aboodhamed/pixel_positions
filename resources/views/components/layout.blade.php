@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pixil Positions2</title>
+    {{-- icon --}}
+    <link rel="icon" type="image/x-icon" href="/images/logo.jpeg">
+    {{-- font --}}
 
     @vite(['resources/css/app.css','resources/js/app.js'])
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -83,7 +86,9 @@
 
         <!-- Main Content -->
         <main class="mt-10 max-w-[986px] mx-auto">
+
             {{ $slot }}
+            
         </main>
     </div>
 

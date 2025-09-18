@@ -7,9 +7,9 @@ use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
 class JobPolicy
-{
-   // app/Policies/JobPolicy.php
-// app/Policies/JobPolicy.php
+{       
+         // app/Policies/JobPolicy.php
+        // app/Policies/JobPolicy.php
 public function update(User $user, Job $job): Response
 {
     return $user->employer->employer === $job->employer->employer
