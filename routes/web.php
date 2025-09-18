@@ -1,5 +1,10 @@
 <?php
 
+// this is the first website i have built while learning laravel
+// I have learned a lot from building this website and i am proud of myself for completing it
+// I have learned how to use laravel's routing, controllers, models, views, migrations, and policies
+// I have also learned how to use laravel's authentication system
+
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\searchController;
